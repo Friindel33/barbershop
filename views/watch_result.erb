@@ -1,0 +1,9 @@
+<h1>Admin Panel.    <b>Visitors for the next week</b></h1>
+
+<table <table class="table table-striped">
+<% @file.each_line do |line| %>
+  <tr><td><%= line %></td></tr>
+<% end %>
+</table>
+
+<%= @file.close %>

@@ -1,0 +1,7 @@
+Visitor: Patrik, e-mail: friindel@mail.ru, time of visit: Wednesday Marning with Victor the Razor.
+Visitor: john, e-mail: fff, time of visit: Wednesday Marning with <b>John Bold</b>.
+Visitor: Peeter, e-mail: my email, time of visit: Friday Evening with <b>Marta "The Hairy"</b>.
+Visitor: , e-mail: , time of visit: Monday Morning with: John Bold.
+Visitor: , e-mail: , time of visit: Monday Morning with: John Bold color: .
+Visitor: Juri, e-mail: friindel@mail.ru, time of visit: Thursday Morning with: Johan the "Razor" color: #46d6db.
+Visitor: Juri, e-mail: friindel@mail.ru, time of visit: Wednesday Morning with: Johan the "Razor" color: #51b749.
