@@ -19,6 +19,7 @@ get '/contacts' do
 	erb :contacts
 end
 
+
 post '/visit' do
   # user_name, email, date_time, barber
   @user_name = params[:user_name]
@@ -36,6 +37,22 @@ post '/visit' do
   f.close
 
   erb :message
+end
+
+post '/contacts' do
+
+	@name = params[:name]
+	@yemail = params[:yemail]
+	@yourmessage = params[:yourmessage]
+
+	@title = "Thank you!"
+	@message = "#{@name}, We have received your message. We will respond ASAP"
+
+	f = File.open './public/users.txt', 'a'
+	f.write "Name: #{@name}, e-mail: #{@yemail}, left a message: #{@yourmessage}.\n"
+	f.close
+
+	erb :message
 end
 
 get '/admin' do
