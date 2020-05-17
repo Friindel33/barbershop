@@ -1,9 +1,20 @@
-<h1>Admin Panel.    <b>Visitors for the next week</b></h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <h1>Admin Panel.    <b>Visitors for the next week</b></h1>
+    <title></title>
+  </head>
+  <body>
+    <table <table class="table table-striped">
+    <% @file.each_line do |line| %>
+      <tr><td><%= line %></td></tr>
+    <% end %>
+    </table>
 
-<table <table class="table table-striped">
-<% @file.each_line do |line| %>
-  <tr><td><%= line %></td></tr>
-<% end %>
-</table>
-
-<%= @file.close %>
+    <%= @file.close %>
+    <br>
+    <button name=delete id=delete class="btn btn-lg btn-primary btn-block" type="submit">Clean Form</button>
+    <br>
+  </body>
+</html>

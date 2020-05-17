@@ -1,14 +1,11 @@
-Visitor: Patrik, e-mail: friindel@mail.ru, time of visit: Wednesday Marning with Victor the Razor.
-Visitor: john, e-mail: fff, time of visit: Wednesday Marning with <b>John Bold</b>.
-Visitor: Peeter, e-mail: my email, time of visit: Friday Evening with <b>Marta "The Hairy"</b>.
-Visitor: , e-mail: , time of visit: Monday Morning with: John Bold.
-Visitor: , e-mail: , time of visit: Monday Morning with: John Bold color: .
-Visitor: Juri, e-mail: friindel@mail.ru, time of visit: Thursday Morning with: Johan the "Razor" color: #46d6db.
-Visitor: Juri, e-mail: friindel@mail.ru, time of visit: Wednesday Morning with: Johan the "Razor" color: #51b749.
-Name: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: My message.
-Name: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: Новые соседи
-Доброго времени суток! Может у кого то и было, и назовут меня баянистом, но утихомирить соседей придумал сам)))
-Пятница, у новых соседей сверху гужбан, народу куча, ржут как кони, а у нас новостройка с тонюсенькими стенами, и гулянка как будто у меня дома. Постучал по стенам (в унисон с другими соседями) - бесполезно.. Только слышу, чтоменя отправляют на уй. Идти ругаться с синими мордами - нет желания, полицаев вызывать тоже не хотелось.. И додумался спуститься до домофона и позвонить, набираю 18В, берут трубку, я говорю:
-- Доброй ночи! Полиция! Открывайте! На вас жалоба!
-Трубку положили, домофон отключили, тишина.
-Ложусь спать, всем доброй ночи.
+VisitName: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: Всем привет!
+
+Случилась ситуация в прошлую пятницу - сижу на почте в очереди, залипаю в телефоне, жду когда моя подойдет... я предпоследний, впереди человек 5-6 (тетки-бабульки в основном)
+
+Работает одно окно и девочка-оператор (новенькая), откровенного говоря притупливает за компьютером... Все взды.
+Visitor: juri, e-mail: friindel@mail.ru, time of visit: Monday Morning with: John Bold color: #A7856A.
+Name: Juri Fomenok, e-mail: juri.fomenok@gmail.com, left a message: Всем привет!
+
+Случилась ситуация в прошлую пятницу - сижу на почте в очереди, залипаю в телефоне, жду когда моя подойдет... я предпоследний, впереди человек 5-6 (тетки-бабульки в основном)
+
+Работает одно окно и девочка-оператор (новенькая), откровенного говоря притупливает за компьютером... Все взды.

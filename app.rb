@@ -62,6 +62,11 @@ end
 	post '/admin' do
 	  @login = params[:login]
 	  @password = params[:password]
+		@delete = params[:delete]
+
+		#@delete = File.open("./public/users.txt", "a+") do |delete|
+		#  delete.truncate(5)
+		#end
 
 	  			# проверим логин и пароль, и пускаем внутрь или нет:
 				  if @login == 'admin' && @password == 'admin'
