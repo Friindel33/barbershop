@@ -1,11 +1,1 @@
-VisitName: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: Всем привет!
-
-Случилась ситуация в прошлую пятницу - сижу на почте в очереди, залипаю в телефоне, жду когда моя подойдет... я предпоследний, впереди человек 5-6 (тетки-бабульки в основном)
-
-Работает одно окно и девочка-оператор (новенькая), откровенного говоря притупливает за компьютером... Все взды.
-Visitor: juri, e-mail: friindel@mail.ru, time of visit: Monday Morning with: John Bold color: #A7856A.
-Name: Juri Fomenok, e-mail: juri.fomenok@gmail.com, left a message: Всем привет!
-
-Случилась ситуация в прошлую пятницу - сижу на почте в очереди, залипаю в телефоне, жду когда моя подойдет... я предпоследний, впереди человек 5-6 (тетки-бабульки в основном)
-
-Работает одно окно и девочка-оператор (новенькая), откровенного говоря притупливает за компьютером... Все взды.
+Visitor: john, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: Monday Morning with: John Bold color: #A0522D.

@@ -27,13 +27,26 @@ post '/visit' do
   @date_time = params[:date_time]
 	@barber = params[:barber]
 	@color = params[:color]
+	@phone = params[:phone]
 
   @title = "Thank you!"
-  @message = " #{@user_name}, we are waiting for You on: #{@date_time}. Your Barber will be #{@barber} and color will be #{@color}"
+  @message = "#{@user_name}, we are waiting for You on: #{@date_time}. Your Barber will be #{@barber} and color will be #{@color}"
 
+	hh = {
+					:username => 'Please enter your name',
+					:email => 'Please enter your email',
+					:phone => 'Please enter your phone',
+					:date_time => 'Please choose date'
+				}
+				hh.each do |key, value|
+					if params[key] == ''
+						@error = hh[key]
+						return erb :visit
+					end
+				end
   # запишем в файл то, что ввёл клиент
   f = File.open './public/users.txt', 'a'
-  f.write "Visitor: #{@user_name}, e-mail: #{@email}, time of visit: #{@date_time} with: #{@barber} color: #{@color}.\n"
+  f.write "Visitor: #{@user_name}, e-mail: #{@email}, phone number: #{@phone}, time of visit: #{@date_time} with: #{@barber} color: #{@color}.\n"
   f.close
 
   erb :message
@@ -74,7 +87,7 @@ end
 				    erb :watch_result
 				    # @file.close - должно быть, но тогда не работает. указал в erb
 				  else
-				    @report = '<p>Wrong Password</p>'
+				    @error = '<p>Wrong Login or Password</p>'
 				    erb :admin
 				  end
 	end
