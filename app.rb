@@ -33,17 +33,17 @@ post '/visit' do
   @message = "#{@user_name}, we are waiting for You on: #{@date_time}. Your Barber will be #{@barber} and color will be #{@color}"
 
 	hh = {
-					:username => 'Please enter your name',
+					:user_name => 'Please enter your name',
 					:email => 'Please enter your email',
 					:phone => 'Please enter your phone',
 					:date_time => 'Please choose date'
 				}
-				hh.each do |key, value|
-					if params[key] == ''
-						@error = hh[key]
-						return erb :visit
-					end
+				@error = hh.select {|key,_| params[key] == ""}.values.join(", ")
+
+				if @error != ''
+					return erb :visit
 				end
+
   # запишем в файл то, что ввёл клиент
   f = File.open './public/users.txt', 'a'
   f.write "Visitor: #{@user_name}, e-mail: #{@email}, phone number: #{@phone}, time of visit: #{@date_time} with: #{@barber} color: #{@color}.\n"
