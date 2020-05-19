@@ -22,13 +22,13 @@
           <input name="phone" type="text" class="form-control" placeholder="Enter Your Phone number" value="<%=@phone%>">
       </div>
       <div class="form-group">
-        <label name="date_time" type="text" id="date_time">Select time and date You want to come</label>
-        <select name="date_time" class="form-control">
-          <option <%=@date_time == 'Monday Morning' ? 'selected' : ''%>>Monday Morning</option>
-          <option <%=@date_time == 'Tuesday Morning' ? 'selected' : ''%>>Tuesday Morning</option>
-          <option <%=@date_time == 'Wednesday Morning' ? 'selected' : ''%>>Wednesday Morning</option>
-          <option <%=@date_time == 'Thursday Morning' ? 'selected' : ''%>>Thursday Morning</option>
-          <option <%=@date_time == 'Friday Evening' ? 'selected' : ''%>>Friday Evening</option>
+        <label name="date_stamp" type="text" id="date_stamp">Select time and date You want to come</label>
+        <select name="date_stamp" class="form-control">
+          <option <%=@date_stamp == 'Monday Morning' ? 'selected' : ''%>>Monday Morning</option>
+          <option <%=@date_stamp == 'Tuesday Morning' ? 'selected' : ''%>>Tuesday Morning</option>
+          <option <%=@date_stamp == 'Wednesday Morning' ? 'selected' : ''%>>Wednesday Morning</option>
+          <option <%=@date_stamp == 'Thursday Morning' ? 'selected' : ''%>>Thursday Morning</option>
+          <option <%=@date_stamp == 'Friday Evening' ? 'selected' : ''%>>Friday Evening</option>
         </select>
       </div>
       <div class="form-group">
@@ -42,18 +42,18 @@
       <div class="form-group">
         <label>Pick the color you want to get: </label>
         <select id="color" name="color">
-          <option <%=@color == 'Dark Aubum' ? 'selected' : ''%> value="#533D32">Dark Aubum</option>
-          <option <%=@color == 'Saddle Brown' ? 'selected' : ''%> value="#8B4513">Saddle Brown</option>
-          <option <%=@color == 'Russet Red' ? 'selected' : ''%> value="#8D4A43">Russet Red</option>
-          <option <%=@color == 'Chocolate' ? 'selected' : ''%> value="#D2691E">Chocolate</option>
-          <option <%=@color == 'Sienna' ? 'selected' : ''%> value="#A0522D">Sienna</option>
-          <option <%=@color == 'Srawbery Blonde' ? 'selected' : ''%> value="#A56B46">Srawbery Blonde</option>
-          <option <%=@color == 'Darkest Grey' ? 'selected' : ''%> value="#71635A">Darkest Grey</option>
-          <option <%=@color == 'Light Golden Brown' ? 'selected' : ''%> value="#A7856A">Light Golden Brown</option>
-          <option <%=@color == 'Pale Golden Blonde' ? 'selected' : ''%> value="#E5C8A8">Pale Golden Blonde</option>
-          <option <%=@color == 'Platinum Blonde' ? 'selected' : ''%> value="#CABFB1">Platinum Blonde</option>
-          <option <%=@color == 'Bleached Blonde' ? 'selected' : ''%> value="#DCD0BA">Bleached Blonde</option>
-          <option <%=@color == 'White Blonde' ? 'selected' : ''%> value="#FFF5E1">White Blonde</option>
+          <option value="#533D32">Dark Aubum</option>
+          <option value="#8B4513">Saddle Brown</option>
+          <option value="#8D4A43">Russet Red</option>
+          <option value="#D2691E">Chocolate</option>
+          <option value="#A0522D">Sienna</option>
+          <option value="#A56B46">Srawbery Blonde</option>
+          <option value="#71635A">Darkest Grey</option>
+          <option value="#A7856A">Light Golden Brown</option>
+          <option value="#E5C8A8">Pale Golden Blonde</option>
+          <option value="#CABFB1">Platinum Blonde</option>
+          <option value="#DCD0BA">Bleached Blonde</option>
+          <option value="#FFF5E1">White Blonde</option>
         </select>
       </div>
 

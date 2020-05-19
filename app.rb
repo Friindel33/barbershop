@@ -2,6 +2,21 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'SQLite3'
+
+configure do
+ @db = SQLite3::Database.new 'barbershop.db'
+ @db.execute 'CREATE TABLE IF NOT EXISTS
+ 		"Users"
+		 (
+			"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+			"phone"	TEXT,
+			"email"	TEXT,
+			"date_stamp"	TEXT,
+			"barber"	TEXT,
+			"color"	TEXT
+		)'
+end
 
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified by Friindel33"
@@ -21,22 +36,22 @@ end
 
 
 post '/visit' do
-  # user_name, email, date_time, barber
+  # user_name, email, date_stamp, barber
   @user_name = params[:user_name]
   @email = params[:email]
-  @date_time = params[:date_time]
+  @date_stamp = params[:date_stamp]
 	@barber = params[:barber]
 	@color = params[:color]
 	@phone = params[:phone]
 
   @title = "Thank you!"
-  @message = "#{@user_name}, we are waiting for You on: #{@date_time}. Your Barber will be #{@barber} and color will be #{@color}"
+  @message = "#{@user_name}, we are waiting for You on: #{@date_stamp}. Your Barber will be #{@barber} and color will be #{@color}"
 
 	hh = {
 					:user_name => 'Please enter your name',
 					:email => 'Please enter your email',
 					:phone => 'Please enter your phone',
-					:date_time => 'Please choose date'
+					:date_stamp => 'Please choose date'
 				}
 				@error = hh.select {|key,_| params[key] == ""}.values.join(", ")
 
@@ -46,7 +61,7 @@ post '/visit' do
 
   # запишем в файл то, что ввёл клиент
   f = File.open './public/users.txt', 'a'
-  f.write "Visitor: #{@user_name}, e-mail: #{@email}, phone number: #{@phone}, time of visit: #{@date_time} with: #{@barber} color: #{@color}.\n"
+  f.write "Visitor: #{@user_name}, e-mail: #{@email}, phone number: #{@phone}, time of visit: #{@date_stamp} with: #{@barber} color: #{@color}.\n"
   f.close
 
   erb :message
