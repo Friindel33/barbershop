@@ -1,22 +1,21 @@
-#encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'SQLite3'
 
-configure do
- @db = SQLite3::Database.new 'barbershop.db'
- @db.execute 'CREATE TABLE IF NOT EXISTS
- 		"Users"
-		 (
-			"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-			"phone"	TEXT,
-			"email"	TEXT,
-			"date_stamp"	TEXT,
-			"barber"	TEXT,
-			"color"	TEXT
-		)'
-end
+#configure do
+#  db.execute 'CREATE TABLE IF NOT EXISTS
+ #		"Users"
+	#	 (
+	#		"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  #    "user_name" TEXT,
+	#		"phone"	TEXT,
+	#		"email"	TEXT,
+	#		"date_stamp"	TEXT,
+	#		"barber"	TEXT,
+	#		"color"	TEXT
+	#	)'
+#end
 
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified by Friindel33"
@@ -59,28 +58,65 @@ post '/visit' do
 					return erb :visit
 				end
 
-  # запишем в файл то, что ввёл клиент
-  f = File.open './public/users.txt', 'a'
-  f.write "Visitor: #{@user_name}, e-mail: #{@email}, phone number: #{@phone}, time of visit: #{@date_stamp} with: #{@barber} color: #{@color}.\n"
-  f.close
+#insert data into barbershop.db
+        db = get_db
+        db.execute 'insert into
+          Users
+          (
+          user_name,
+          phone,
+          email,
+          date_stamp,
+          barber,
+          color
+          )
+          values (?, ?, ?, ?, ?, ?)', [@user_name, @phone, @email, @date_stamp, @barber, @color]
+
+          # запишем в файл то, что ввёл клиент
+          f = File.open './public/users.txt', 'a'
+          f.write "Visitor: #{@user_name}, e-mail: #{@email}, phone number: #{@phone}, time of visit: #{@date_stamp} with: #{@barber} color: #{@color}.\n"
+          f.close
 
   erb :message
+end
+
+def get_db
+  return SQLite3::Database.new 'barbershop.db'
 end
 
 post '/contacts' do
 
 	@name = params[:name]
 	@yemail = params[:yemail]
-	@yourmessage = params[:yourmessage]
+	@your_message = params[:yourmessage]
 
 	@title = "Thank you!"
 	@message = "#{@name}, We have received your message. We will respond ASAP"
 
+  bb = {
+					:name => 'Please enter your name',
+					:yemail => 'Please enter your email',
+					:your_message => 'Please enter your message',
+				}
+				@error = bb.select {|key,_| params[key] == ""}.values.join(", ")
+
+				if @error != ''
+					return erb :contacts
+				end
+
+        #insert data into barbershop.db
+                db1 = get_db1
+                db1.execute 'insert into Contacts (name, yemail, your_message) values (?, ?, ?)', [@name, @yemail, @your_message]
+
 	f = File.open './public/users.txt', 'a'
-	f.write "Name: #{@name}, e-mail: #{@yemail}, left a message: #{@yourmessage}.\n"
+	f.write "Name: #{@name}, e-mail: #{@yemail}, left a message: #{@your_message}.\n"
 	f.close
 
 	erb :message
+end
+
+def get_db1
+  return SQLite3::Database.new 'barbershop.db'
 end
 
 get '/admin' do
