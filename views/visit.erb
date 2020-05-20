@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="signin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../jquery.datetimepicker.css"/>
+
     <title></title>
   </head>
   <body>
@@ -22,14 +23,8 @@
           <input name="phone" type="text" class="form-control" placeholder="Enter Your Phone number" value="<%=@phone%>">
       </div>
       <div class="form-group">
-        <label name="date_stamp" type="text" id="date_stamp">Select time and date You want to come</label>
-        <select name="date_stamp" class="form-control">
-          <option <%=@date_stamp == 'Monday Morning' ? 'selected' : ''%>>Monday Morning</option>
-          <option <%=@date_stamp == 'Tuesday Morning' ? 'selected' : ''%>>Tuesday Morning</option>
-          <option <%=@date_stamp == 'Wednesday Morning' ? 'selected' : ''%>>Wednesday Morning</option>
-          <option <%=@date_stamp == 'Thursday Morning' ? 'selected' : ''%>>Thursday Morning</option>
-          <option <%=@date_stamp == 'Friday Evening' ? 'selected' : ''%>>Friday Evening</option>
-        </select>
+        <label>Select time and date You want to come</label>
+        <input name="date_stamp" type="text" id="datetimepicker" class="form-control" placeholder="Select date and time" value="<%=@date_stamp%>">
       </div>
       <div class="form-group">
         <label name="barber" type="text" id="barber">Select Your Barber</label>
@@ -63,6 +58,7 @@
   <script type="text/javascript">
     $(function(){
       $('#color').simplecolorpicker();
+      $('#datetimepicker').datetimepicker();
     })
   </script>
   </body>
