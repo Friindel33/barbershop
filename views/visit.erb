@@ -23,14 +23,14 @@
       </div>
       <div class="form-group">
         <label>Select time and date You want to come</label>
-        <input name="date_stamp" type="text" id="datetimepicker" class="form-control" placeholder="Select date and time" value="<%=@date_stamp%>">
+        <input name="date_stamp" autocomplete="off" type="text" id="datetimepicker" class="form-control" placeholder="Select date and time" value="<%=@date_stamp%>">
       </div>
       <div class="form-group">
         <label name="barber" type="text" id="barber">Select Your Barber</label>
         <select name="barber" class="form-control">
-          <option <%=@barber == 'John Bold' ? 'selected' : ''%>>John Bold</option>
-          <option <%=@barber == 'Marta "The Hairy"' ? 'selected' : ''%>>Marta "The Hairy"</option>
-          <option <%=@barber == 'Johan the "Razor"' ? 'selected' : ''%>>Johan the "Razor"</option>
+          <% @barbers.each do |item| %>
+            <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
+          <% end %>
         </select>
       </div>
       <div class="form-group">

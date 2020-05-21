@@ -3,19 +3,53 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'SQLite3'
 
-#configure do
-#  db.execute 'CREATE TABLE IF NOT EXISTS
- #		"Users"
-	#	 (
-	#		"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  #    "user_name" TEXT,
-	#		"phone"	TEXT,
-	#		"email"	TEXT,
-	#		"date_stamp"	TEXT,
-	#		"barber"	TEXT,
-	#		"color"	TEXT
-	#	)'
-#end
+def is_barber_exists? db, name #checks if barber exists in the list
+	db.execute('select * from barbers where name =?' , [name]).length > 0
+end
+
+def seed_db db, barbers
+
+	barbers.each do |barber| #if is_barber_exists? doesn't have a barber with this name it inserts one
+		if !is_barber_exists? db, barber
+			db.execute 'insert into barbers (name) values (?)', [barber]
+		end
+	end
+
+end
+
+def get_db
+  db = SQLite3::Database.new 'barbershop.db'
+	db.results_as_hash = true
+	return db
+end
+
+before do
+	db = get_db
+	@barbers = db.execute 'select * from barbers'
+end
+
+configure do
+	db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS
+ 		"Users"
+		 (
+			"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+      "user_name" TEXT,
+			"phone"	TEXT,
+			"email"	TEXT,
+			"date_stamp"	TEXT,
+			"barber"	TEXT,
+			"color"	TEXT
+		)'
+
+db.execute 'CREATE TABLE IF NOT EXISTS
+	"barbers"
+	 (
+		"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+		"name" TEXT
+		)'                                                                   #  creates table barbers if there is no one
+		seed_db db, ['John Bold', 'Marta "The Hairy"', 'Johan the "Razor"', 'Willie the "Scissors"']  #  checks if the one I want to add in in this list
+end
 
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified by Friindel33"
@@ -44,7 +78,7 @@ post '/visit' do
 	@phone = params[:phone]
 
   @title = "Thank you!"
-  @message = "#{@user_name}, we are waiting for You on: #{@date_stamp}. Your Barber will be #{@barber} and color will be #{@color}"
+  @message = "<h4>#{@user_name}, we are waiting for You on: <b>#{@date_stamp}</b>. Your Barber will be #{@barber} and color will be #{@color}</h4>"
 
 	hh = {
 					:user_name => 'Please enter your name',
@@ -59,7 +93,7 @@ post '/visit' do
 				end
 
 #insert data into barbershop.db
-        db = get_db
+				db = get_db
         db.execute 'insert into
           Users
           (
@@ -80,9 +114,6 @@ post '/visit' do
   erb :message
 end
 
-def get_db
-  return SQLite3::Database.new 'barbershop.db'
-end
 
 post '/contacts' do
 
@@ -105,8 +136,8 @@ post '/contacts' do
 				end
 
         #insert data into barbershop.db
-                db1 = get_db1
-                db1.execute 'insert into Contacts (name, yemail, your_message) values (?, ?, ?)', [@name, @yemail, @your_message]
+				db = get_db
+                db.execute 'insert into Contacts (name, yemail, your_message) values (?, ?, ?)', [@name, @yemail, @your_message]
 
 	f = File.open './public/users.txt', 'a'
 	f.write "Name: #{@name}, e-mail: #{@yemail}, left a message: #{@your_message}.\n"
@@ -115,9 +146,6 @@ post '/contacts' do
 	erb :message
 end
 
-def get_db1
-  return SQLite3::Database.new 'barbershop.db'
-end
 
 get '/admin' do
   erb :admin
@@ -141,4 +169,10 @@ end
 				    @error = '<p>Wrong Login or Password</p>'
 				    erb :admin
 				  end
+	end
+
+	get '/showusers' do
+		db = get_db
+		@results = db.execute 'select * from users order by id'
+		erb :showusers
 	end

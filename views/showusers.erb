@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Visitor</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Date of Visit</th>
+          <th>Barber</th>
+          <th>Color to use</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @results.each do |row| %>
+          <tr>
+            <td><%= row['id'] %></td>
+            <td><%= row['user_name'] %></td>
+            <td><%= row['phone'] %></td>
+            <td><%= row['email'] %></td>
+            <td><%= row['date_stamp'] %></td>
+            <td><%= row['barber'] %></td>
+            <td style="background-color: <%= row['color'] %>"><%= row['color'] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+  </body>
+</html>
