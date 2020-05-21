@@ -1,3 +1,4 @@
-# barbershop by Friindel33
+sinatra-bootstrap
+=======================
 
-My first site on Ruby with Sinatra
+Cleaned version of https://github.com/bootstrap-ruby/sinatra-bootstrap

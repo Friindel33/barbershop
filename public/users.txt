@@ -1,2 +1,11 @@
-Visitor: john, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: Monday Morning with: John Bold color: #A0522D.
-Name: Juri Fomenok, e-mail: juri.fomenok@gmail.com, left a message: -Мама! Ко мне сегодня придут в гости друзья. С ними тётя и бабушка. Тёте 30 лет, бабушке 70. То есть практически твои ровесники. Развлеки их, пока я с друзьями общаюсь. Ну, чаем напои, покажи свои украшения, в компьютер дай поиграть. Уверен, вы найдёте общий язык, ты у меня такая молодец).
+Name: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: Медик из Тулы. Борется одновременно с коронавирусом, с жарой и с хандрой пациентов. В защитном костюме очень жарко, поэтому решила надеть его только поверх купальника. Так можно, оказывается..
+Visitor: Juri, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: Monday Morning with: John Bold color: #8B4513.
+Visitor: admin, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: 2020/05/07 17:00 with: John Bold color: #A0522D.
+Visitor: Juri, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: 2020/05/02 19:00 with: John Bold color: #533D32.
+Name: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: Чувак создал канал "Пап, а как...?" где он выкладывает мини тьюториалы, в которых учит житейским мелочам, которым обычно учат папы: как погладить рубашку, как прибить полочку, как бриться и т.д. .
+Visitor: admin, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: 2020/05/20 19:00 with: Marta "The Hairy" color: #8B4513.
+Name: Juri Vladimirovich Fomenok, e-mail: friindel@mail.ru, left a message: Как то очень давно, когда начали запрещать расписать алкоголь в парках, пошли мы с друзьями пить пиво в глубь парка. Сидим на лавочке, общаемся, пьем.
+Время уже позднее.... темно. И тут свет фонарика в лицо. И милиционер "молоденький" с напарником спрашивает...
+-Вам не страшно ночью в лесу пиво пить.
+Visitor: Peter, e-mail: friindel@mail.ru, phone number: +37258163256, time of visit: 2020/02/04 16:00 with: John Bold color: #533D32.
+Name: sam, e-mail: friindel@mail.ru, left a message: Juri, we know how important it is to feel close to those you care about when you can't be there in person. Messenger Rooms make it fast and easy for groups of friends and families to hang out together on video. We hope this helps you stay connected..
