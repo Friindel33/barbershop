@@ -19,3 +19,5 @@ Visitor: Bob, e-mail: bobby@mail.ru, phone number: +37258163256, time of visit: 
 Visitor: Bob, e-mail: bobby@mail.ru, phone number: +37258163256, time of visit: 2020/04/26 22:00 with: Johan the "Razor" color: #E5C8A8.
 Visitor: Bob, e-mail: bobby@mail.ru, phone number: +37258163256, time of visit: 2020/04/26 22:00 with: Johan the "Razor" color: #E5C8A8.
 Visitor: Bob, e-mail: bobby@mail.ru, phone number: +37258163256, time of visit: 2020/04/26 22:00 with: Johan the "Razor" color: #E5C8A8.
+Name: Hupert, e-mail: hupert@mail.ru, left a message: Hello from hupert!!!!!!!!!!!!!!!!!.
+Visitor: Huper, e-mail: huper@mail.by, phone number: 458761-86700, time of visit: 2020/03/10 14:00 with: Willie the "Scissors" color: #A56B46.
